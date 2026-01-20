@@ -42,7 +42,7 @@ class NYTController {
         catch (err) {
             console.error('Erro ao pesquisar notícias:');
             console.error(err.response?.data || err.message);
-            return [];
+            return;
         }
 
     }

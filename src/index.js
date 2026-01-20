@@ -12,16 +12,23 @@ if (!termo) {
 
 console.log(`Buscando notícias sobre: ${termo}`);
 
-const noticias = await nytController.buscarNoticias('tecnologia');
+try {
+    const noticias = await nytController.buscarNoticias(termo);
 
+    if (noticias.length < 50) {
+        console.log(`Foram encontradas apenas ${noticias.length} noticias`);
+    } else {
+        console.log(`50 noticias encontradas com sucesso!`);
+    }
 
-if (noticias.length < 50) {
-    console.log(`Foram encontradas apenas ${noticias.length} notícias.`);
-} else {
-    console.log("50 notícias encontradas com sucesso!");
+    exportarNoticiasExcel(noticias, termo);
+
+} catch (error) {
+    console.error("Erro durante a execução do script:");
+    console.error(error.message || error);
+    process.exit(1);
 }
 
-exportarNoticiasExcel(noticias, termo);
 
 
 
