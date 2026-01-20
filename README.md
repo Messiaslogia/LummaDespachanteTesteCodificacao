@@ -1,4 +1,4 @@
-# LummaDespachanteTesteCodificacao
+# Lumma Despachante Teste de Codificacao
 Etapa de Codificação para vaga de Analista JR 
 
 Script em Node.js para coleta automatizada de notícias do New York Times
